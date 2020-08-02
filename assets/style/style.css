@@ -136,11 +136,13 @@ label{
 
 .form-input:focus {
     border: 1px solid #D9D9D9;
+    outline: none;
     height: 48px;
     box-sizing: border-box;
     box-shadow: 4px 4px 24px rgba(186, 186, 186, 0.54);
     border-radius: 12px;
 }
+
 
 .result-total{
     font-weight: 500;
@@ -218,9 +220,11 @@ label{
     line-height: 12px;
 }
 
-.btn:active {
+.btn:active,
+.btn:focus {
     background: #2847b9;
     border-radius: 12px;
+    outline: none;
     box-shadow: 4px 4px 24px rgba(186, 186, 186, 0.54);
 
     color: #ffffff;
@@ -260,9 +264,11 @@ label{
     line-height: 12px;
 }
 
-.btn-first:active {
+.btn-first:active,
+.btn-first:focus {
     background: #2847b9;
     border-radius: 12px;
+    outline: none;
     box-shadow: 4px 4px 24px rgba(186, 186, 186, 0.54);
     border-radius: 80px;
     border: none;
@@ -301,9 +307,11 @@ label{
     line-height: 12px;
 }
 
-.btn-last:active {
+.btn-last:active,
+.btn-last:focus {
     background: #2847b9;
     border-radius: 12px;
+    outline: none;
     box-shadow: 4px 4px 24px rgba(186, 186, 186, 0.54);
     border-radius: 80px;
     border: none;
@@ -323,7 +331,6 @@ label{
 .pagination .card {
     width: 20%;
     text-align: center;
-    width: 50%;
 }
 
 .section-about{
@@ -336,6 +343,7 @@ label{
     box-shadow: 20px 18px 44px rgba(180, 180, 180, 0.28);
     border-radius: 12px;
     margin-top: 80px;
+    margin-bottom: 80px;
     width: 576px;
 }
 
@@ -362,10 +370,6 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.links li{
-    /* display: flex; */
 }
 
 .link{
@@ -406,6 +410,20 @@ label{
     color: #EDEDED;
 }
 
+footer{
+    background: #0c1638;
+    color: #EBEBEB;
+    border: 1px solid rgba(186, 186, 186, 0.54);
+    padding: 62px 0px;
+    font-size: 12px;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -420,8 +438,7 @@ label{
     border-radius: 40px;
 }
 
-
- /* Small devices (landscape phones, 576px and up) */
+ /* Small devices */
 @media (max-width: 804px) {
     .container {
         display: flex;
@@ -470,5 +487,16 @@ label{
         padding: 8px 20px;
         text-align: center;
         color: #ffffff;
+    }
+
+    .pagination .card {
+        width: 40%;
+        text-align: center;
+    }
+
+    .greeting{
+        text-align: center;
+        font-weight: 300;
+        margin-bottom: 16px;
     }
 }
