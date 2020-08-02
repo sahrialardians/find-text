@@ -41,7 +41,7 @@
                                     <div class="form-group">
                                         <label for="link-video">Link video youtube</label>
                                         <input type="text" class="form-input" id="link-video" aria-describedby="linkHelp"
-                                            placeholder="Paste the youtube video link here">
+                                            placeholder="Paste the youtube video link here" v-model="url">
                                         <!-- <small id="linkHelp" class="form-text text-muted">Paste your link video!</small> -->
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                     <div class="form-group">
                                         <label for="text">Text</label>
                                         <input type="text" class="form-input" id="text" aria-describedby="textHelp"
-                                            placeholder="Find for your text">
+                                            placeholder="Find for your text" v-model="keyWord">
                                         <!-- <small id="textHelp" class="form-text text-muted">Find the text you want in the video</small> -->
                                     </div>
                                 </div>
@@ -331,6 +331,7 @@
             data: {
                 url: 'https://www.youtube.com/watch?v=G5Nk4VykcUw',
                 keyWord: '',
+                listResult: [],
                 pagination: {
                     first: null,
                     last: null,
