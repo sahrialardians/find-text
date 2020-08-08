@@ -19,16 +19,7 @@
 <body>
     <div id="app">
 
-        <header>
-            <nav>
-                <h1><a href="index.html">FindText</a></h1>
-                <ul class="menu">
-                    <li>
-                        <a class="menu-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <app-bar></app-bar>
 
         <main class="container">
             <section class="hero-search">
@@ -42,7 +33,6 @@
                                         <label for="link-video">Link video youtube</label>
                                         <input type="text" class="form-input" id="link-video" aria-describedby="linkHelp"
                                             placeholder="Paste the youtube video link here" v-model="url">
-                                        <!-- <small id="linkHelp" class="form-text text-muted">Paste your link video!</small> -->
                                     </div>
                                 </div>
                                 <div class="col">
@@ -50,7 +40,6 @@
                                         <label for="text">Text</label>
                                         <input type="text" class="form-input" id="text" aria-describedby="textHelp"
                                             placeholder="Find for your text" v-model="keyWord">
-                                        <!-- <small id="textHelp" class="form-text text-muted">Find the text you want in the video</small> -->
                                     </div>
                                 </div>
                             </div>
@@ -62,227 +51,21 @@
             <article class="list-of-results">
                 <header>
                     <h3 class="result">Result of text</h3>
-                    <h4 class="result-total">Total results : </h4>
+                    <h4 class="result-total">Total results : {{ pagination.total }}</h4>
                 </header>
-                <section class="item-list">
+
+                <section class="item-list" v-for="(result, index) in results" :key="index">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
+                                    <p v-html="result.text">
+                                        <!-- github login under the sign-in button that we have we'll add in a new link. -->
                                     </p>
                                 </div>
                                 <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="item-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>
-                                        github login under the sign-in button that we have we'll add in a new link.
-                                    </p>
-                                </div>
-                                <div class="col-full">
-                                    <a class="btn-view" href="#" target="_blank">View</a>
+                                    <a class="btn-view" :href="url + '&t=' + result.start + 's'"
+                                        target="_blank">View</a>
                                 </div>
                             </div>
                         </div>
@@ -291,34 +74,24 @@
             </article>
             <article>
                 <header>
-                    <h4 class="result-total">Page : </h4>
+                    <h4 class="result-total">Page : {{ changeString(pagination.page) }}</h4>
                 </header>
                 <section class="pagination">
                     <div class="card">
                         <div class="card-body">
-                            <button class="btn-first"><i class="fas fa-chevron-left"></i></button>
-                            <button class="btn">Prev</button>
-                            <button class="btn">Next</button>
-                            <button class="btn-last"><i class="fas fa-chevron-right"></i></button>
+                            <button class="btn-first"><i class="fas fa-chevron-left" :disabled="!pagination.first" @click="firstButton"></i></button>
+                            <button class="btn" :disabled="!pagination.prev" @click="prevButton">Prev</button>
+                            <button class="btn" :disabled="!pagination.next" @click="nextButton">Next</button>
+                            <button class="btn-last"><i class="fas fa-chevron-right" :disabled="!pagination.last" @click="lastButton"></i></button>
                         </div>
                     </div>
                 </section>
             </article>
         </main>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <img class="logo" src="assets/images/logo.png" alt="">
-                </div>
-                <div class="row">
-                    <p class="greeting">Hi, I'm Sahrial based in Medan, Indonesia. <br>
-                        I have a passion for web design and love to create <br>
-                        for web and mobile devices.</p>
-                    <p>Created with <i class="far fa-heart"></i> from Medan.</p>
-                </div>
-            </div>
-        </footer>
+        <footer-bar></footer-bar>
+
+        <!-- <about-me></about-me> -->
 
     </div>
 
@@ -326,10 +99,45 @@
     <script src="assets/libraries/index.js"></script>
 
     <script>
+        Vue.component('app-bar', {
+            template: `
+                <header>
+                    <nav>
+                        <h1><a href="index.html">FindText</a></h1>
+                        <ul class="menu">
+                            <li>
+                                <a class="menu-link" href="about.html">About</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+            `
+        })
+
+        Vue.component('footer-bar', {
+            template: `
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <img class="logo" src="assets/images/logo.png" alt="">
+                        </div>
+                        <div class="row">
+                            <p class="greeting">Hi, I'm Sahrial based in Medan, Indonesia. <br>
+                                I have a passion for web design and love to create <br>
+                                for web and mobile devices.</p>
+                            <p>Created with <i class="far fa-heart"></i> from Medan.</p>
+                        </div>
+                    </div>
+                </footer>
+            `
+        })
+    </script>
+
+    <script>
         new Vue({
             el: '#app',
             data: {
-                url: 'https://www.youtube.com/watch?v=G5Nk4VykcUw',
+                url: '',
                 keyWord: '',
                 results: [],
                 pagination: {
@@ -339,6 +147,55 @@
                     next: null,
                     total: 0,
                     page: null
+                }
+            },
+            computed: {
+                changeString(){
+                    return (parameter) => {
+                        return JSON.stringify(parameter, null, 2)
+                    }
+                }
+            },
+            watch: {
+                keyWord: pDebounce(function keyWord(keyWord){
+                    this.search(keyWord, this.url)
+                }, 250)
+            },
+            methods: {
+                async search(keyWord, url, pagination){
+                    let urlApi = `https://cari-teks-video-api.vercel.app/api/search?q=${keyWord}&url=${url}`;
+
+                    if(pagination){
+                        urlApi = pagination
+                    }
+
+                    const respon = await fetch(urlApi)
+                        .then(_respon => {
+                            if(_respon.ok){
+                                return _respon.json()
+                            }
+                        return []
+                    })
+
+                    this.results = respon.data
+                    this.pagination.first = respon.first
+                    this.pagination.last = respon.last
+                    this.pagination.prev = respon.prev
+                    this.pagination.next = respon.next
+                    this.pagination.total = respon.total
+                    this.pagination.page = respon.page
+                },
+                firstButton(){
+                    this.search(this.keyWord, this.url, this.pagination.first)
+                },
+                prevButton(){
+                this.search(this.keyWord, this.url, this.pagination.prev)
+                },
+                nextButton(){
+                this.search(this.keyWord, this.url, this.pagination.next)
+                },
+                lastButton(){
+                    this.search(this.keyWord, this.url, this.pagination.last)
                 }
             }
         })
